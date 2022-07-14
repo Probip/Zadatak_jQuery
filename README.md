@@ -1,2 +1,2 @@
-# Factory_zadatak_jQuery_Pavlovic_Roberta
+# Zadatak_jQuery_Pavlovic_Roberta
  
