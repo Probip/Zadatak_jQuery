@@ -1,0 +1,204 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #ffffff;
+    position: relative;
+}
+#container{
+    width: 940px;
+    height: 730px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    align-content: space-between;
+}
+.grayElements{
+    height: 100px;
+    background-color: #DDDDDD;
+}
+#div1{
+    width: 32.9%;
+}
+#div2{
+    width: 65%;
+    margin-left: 19px;  
+}
+.tekstDiv{
+    color: #ffffff; 
+    padding-left: 12.5%;
+    /*lijeva margina teksta (tj. padding left unutar div2) zauzima 1 stupac, 
+    div2 zauzima 8 stupaca, 
+    1/8=0.125*100=12.5%*/ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#div1,#div2{
+    border-radius: 0 0 5px 5px;
+}
+#div3{
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+#carouselContainer, #carouselContainer1, #carousel2{
+    position: absolute;
+    margin-left: -50%;
+    width: 800px;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content: right ;
+    align-content:flex-start;
+}
+#carouselContainer1{
+    position: absolute;
+    /*padding-right:100px;*/
+    /*ako je 11 slika onda:*/
+    margin-right: 60px;
+    /*ako je 9 slika onda:*/
+    /*margin-right: 160px;*/
+   
+    top:210px;
+    flex-direction: row;
+    justify-content: flex-start;
+  
+}
+#carousel2,#carousel3{
+    position: absolute;
+    margin-right: -197.5%;
+    width: max-content;
+    /*margin-right: -802px;*/
+}
+#carousel3{
+    margin-right:-175%;
+    top:210px;
+    position: absolute;
+    margin-left: -50%;
+   
+    display: flex;
+    justify-content: flex-start;
+    
+}
+#carouselContainer> img, #carouselContainer1> img,#carousel2> img,#carousel3> img{
+    display: inline-block;
+    height: 200px;
+    border-radius: 5px;
+    margin: 3px;
+    flex-shrink: 0;
+}
+.animationImg{
+    animation-name: imgSlider;
+    animation-duration: 2s;
+}
+.animationImgNext{
+    animation-name: imgNext;
+    animation-duration: 2s;
+}
+.moveLeft{
+    animation-name: moveToLeft;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.moveRight{
+    animation-name: moveToRight;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+
+#overflow{
+    position: absolute;
+    top: 150px;
+    left: -530px;
+    /*ako je 11 slika*/
+    width: 1150px;
+    /*ako je 9 slika*/
+    /*width: 950px;*/
+    height:630px;
+    overflow: hidden;
+    direction: rtl;
+}
+#overflow1{
+   position: absolute;
+   right: 200px;
+}
+/*arrows*/
+div.arrow{
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60px;
+    height: 60px;
+    border: solid 2px #DDDDDD;
+    border-radius: 5px;
+    margin: 5px;
+    /*margin-left: 100px;/*60px+20px+20px (širina stupca+ dva razmaka među stupcima*/
+    z-index: 2;
+    position: absolute;
+    top: 360px;
+    right: 320px;
+}
+#left{
+    background-image: url('/assets/arrow-gray-left.png');  
+}
+#right{
+    background-image: url('/assets/arrow-gray-right.png');
+    top: 425px;
+}
+div.arrow:hover{
+    border: solid 2px #134880;
+    transition: 0.7s;
+}
+#left:hover{
+    background-image: url('/assets/arrow-blue-left.png');
+    transition: 0.7s;
+}
+#right:hover{
+    background-image: url('/assets/arrow-blue-right.png');
+    transition: 0.7s;
+}
+
+/*sidebar*/
+#sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 19px ;
+    width: 33%;
+    position: absolute;
+    right: 0;
+    top:150px;
+}
+h1{
+    color: #134880;
+    font-size: 32px;
+}
+p{
+    margin-top: 10px;
+    line-height: 26px;
+    font-size: 18px;
+    color: #484A4C;
+}
+.whiteDiv{
+    width: 260px;
+    height: 210px;
+    position: absolute;
+    right: 317px;
+    margin-top: 360px;
+    z-index: 2;
+    /*border: #134880 solid 5px;*/
+    
+}
+
+@keyframes imgSlider{
+    0%{transform: translateX(-100%)}
+    100%{transform: translateX(0%)}
+}
+@keyframes imgNext{
+    0%{transform: translateX(100%)}
+    100%{transform: translateX(0%)}
+}
