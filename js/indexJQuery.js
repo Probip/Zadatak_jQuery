@@ -92,13 +92,15 @@ $(document).ready(function(){
 
 
         /*provjera koliko iznosi varijabla i, premještanje elemenata ovisno o varijabli i */
-        if(i==imgs.length || i==0){$('#carouselContainer1 img').clone().appendTo('#carousel3');}
+        if(i>=imgs.length-2 || i<=2){$('#carouselContainer img').clone().appendTo('#carouselContainer1');}
         if((i+1)%imgTotalNumber==0 || i%imgTotalNumber==0){
-            $('#carouselContainer1 img').clone().appendTo('#carouselContainer1');
+            $('#carouselContainer1 img').appendTo('#carouselContainer1');
             $('#carouselContainer img').clone().appendTo('#carouselContainer');
+            $('#carouselContainer1 img').clone().appendTo('#carousel3');
         }
-       if(i==imgTotalNumber-1){
+       /*if(i==imgs.length-1 || i<=0){
        $('#carouselContainer1 img').appendTo('#carousel3');
+       $('#carouselContainer1 img').remove();
         var br=0;
         $('#carouselContainer1 img').each((image)=>{
             br++;
@@ -106,9 +108,9 @@ $(document).ready(function(){
                 $('#carouselContainer1 img:last-child').remove();
             }
          })
-        }
-        if(i+1==imgTotalNumber*2){
-            $('#carousel3 img').clone().appendTo('#carousel3');
+        }*/
+        if(i==imgTotalNumber*2){
+            $('#carousel3 img').clone().prependTo('#carousel3');
         }
     })
 
